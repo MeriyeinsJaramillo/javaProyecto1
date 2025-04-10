@@ -22,7 +22,7 @@ public class Main {
         usuarioEmpleado = sc.nextLine();
         System.out.println("Ingrese su contraseña");
         contrasenaUsuario = sc.nextLine();
-        if(usuarioEmpleado.equals ("usurio") && contrasenaUsuario.equals("123")){
+        if(usuarioEmpleado.equals ("Adim") && contrasenaUsuario.equals("Adim23")){
             System.out.println("Ingreso de forma correcta");
             System.out.println("Ingrese el nombre del empleado");
             nombreEmpleado = sc.nextLine();
@@ -41,11 +41,15 @@ public class Main {
                 bonificacionEmpleado=0;
                 auxilioTransporte=0;
             } else {
-                bonificacionEmpleado=salarioBruto*0.3;
+                bonificacionEmpleado=salarioBruto*0.1;
                 auxilioTransporte=200000;
             }
-            salarioNeto=salarioBruto+bonificacionEmpleado+auxilioTransporte;
-            System.out.println("El salario neto es: " + salarioNeto);
+            retencionSalud=salarioBruto*0.04;
+            retencionPension=salarioBruto*0.04;
+            salarioNeto=salarioBruto-retencionPension-retencionSalud+ bonificacionEmpleado + auxilioTransporte;
+        System.out.println("detalle de nómina Empleado: ")
+            System.out.println("El empleado"+ nombreEmpleado "con documento: " + documentoIdentidad + "Tiene el siguiete detalle:\nSalario bruto" + salarioBruto + "\nSalario neto" + salarioNeto + "\nDeducción por salud: " + retencionSalud + "\Deducción pensión" + retencionPension + "\nAuxilio de transporte:" + auxilioTransporte + "\nBonificación" + bonificacionEmpleado);
+
 
         }else {
             System.out.println("Error de credenciales");
